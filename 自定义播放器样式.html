@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<link href="font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet">
+	<style>
+		.div_father {
+			margin: 100px auto;
+			width: 550px;
+			height: 320px;
+			border-radius: 10px;
+			position: relative;
+		}
+
+		.div_child_1 {
+			top: 0px;
+			width: 100%;
+			height: 40px;
+			background-color: #54626B;
+			border-radius: 10px;
+			position: absolute;
+			opacity: 0;
+			z-index: 2px;
+		}
+
+		.div_name {
+			text-align: center;
+			line-height: 40px;
+			font-size: 18px;
+			color: white;
+			position: absolute;
+			left: 225px;
+			width: 100px;
+		}
+
+		.div_type {
+			text-align: center;
+			font-family: 黑体;
+			line-height: 45px;
+			font-size: 14px;
+			color: white;
+			position: absolute;
+			right: 0px;
+			width: 80px;
+		}
+
+		.start_button {
+			top: 110px;
+			left: 225px;
+			width: 100px;
+			height: 100px;
+			position: absolute;
+			background-color: #101F25;
+			border-radius: 50px;
+			opacity: 1;
+			box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.3);
+			z-index: 2px;
+		}
+
+		.start_button_div {
+			width: 50px;
+			height: 50px;
+			position: absolute;
+			top: 20px;
+			left: 32px
+		}
+
+		.start_button_div_1 {
+			border-left: 50px solid #FFFFFF;
+			border-top: 30px solid rgba(255, 255, 255, 0);
+			border-bottom: 30px solid rgba(255, 255, 255, 0);
+		}
+
+		.div_child_2 {
+			width: 100%;
+			height: 55px;
+			bottom: 0px;
+			left: 0px;
+			background-color: #54626B;
+			border-radius: 0 0 10px 10px;
+			position: absolute;
+			opacity: 0;
+			z-index: 2px;
+		}
+
+		.div_back_video {
+			position: absolute;
+			top: 0px;
+			right: 0px;
+			left: 0px;
+			bottom: 0px;
+			border-radius: 10px;
+			background-color: #1B2F3A;
+		}
+
+		.div_child_2 .play {
+			width: 25px;
+			height: 25px;
+			margin-top: 15px;
+			margin-left: 20px;
+			cursor: pointer;
+			float: left;
+			text-align: center;
+			font-size: 20px;
+		}
+
+		.div_child_2 .progress {
+			float: left;
+			width: 40%;
+			height: 2px;
+			background: #fff;
+			margin-top: 25px;
+			margin-left: 10px;
+			cursor: pointer;
+			position: relative;
+		}
+
+		.div_child_2 .progress .bar {
+			width: 0%;
+			height: 100%;
+			background: #4693EC;
+			display: inline-block;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		.div_child_2 .progress .control {
+			width: 12px;
+			height: 12px;
+			position: absolute;
+			border-radius: 100%;
+			left: 0;
+			top: -5px;
+			background: #fff;
+			cursor: pointer;
+		}
+
+		.div_child_2 .progress .control:hover {
+			box-shadow: 0px 0px 12px 1px rgba(255, 255, 255, 0.7);
+		}
+
+		.div_child_2 .time_current {
+			width: 50px;
+			height: 20px;
+			margin-top: 17px;
+			margin-left: 10px;
+			float: left;
+			font-size: 12px;
+			color: #fff;
+			line-height: 20px;
+			text-align: center;
+		}
+
+		.div_child_2 .time_total {
+			width: 50px;
+			height: 20px;
+			margin-top: 17px;
+			margin-left: 10px;
+			float: left;
+			font-size: 12px;
+			color: #fff;
+			line-height: 20px;
+			text-align: center;
+		}
+
+		.div_child_2 .sound {
+			width: 25px;
+			height: 25px;
+			margin-top: 15px;
+			margin-left: 20px;
+			float: left;
+			cursor: pointer;
+			text-align: center;
+			font-size: 20px;
+		}
+
+		.div_child_2 .download {
+			width: 25px;
+			height: 25px;
+			margin-top: 15px;
+			margin-left: 20px;
+			float: left;
+			cursor: pointer;
+			text-align: center;
+			font-size: 20px;
+		}
+
+		.div_child_2 .export {
+			width: 25px;
+			height: 25px;
+			margin-top: 15px;
+			margin-left: 20px;
+			float: left;
+			cursor: pointer;
+			text-align: center;
+			font-size: 20px;
+		}
+
+		.div_child_2 .play .div_child_2_play_fa {
+			color: #fff;
+		}
+
+		.div_child_2 .sound .div_child_2_sound_fa {
+			color: #fff;
+		}
+
+		.div_child_2 .download .div_child_2_download_fa {
+			color: #fff;
+		}
+
+		.div_child_2 .export .div_child_2_export_fa {
+			color: #fff;
+		}
+
+		.sound_progress {
+			opacity: 0.7;
+			width: 25px;
+			height: 75px;
+			background-color: #54626B;
+			top: 205px;
+			right: 110px;
+			position: absolute;
+			display: none;
+			z-index: 3px;
+		}
+
+		.sound_progress_content {
+			top: 7px;
+			right: 12px;
+			width: 2px;
+			height: 80%;
+			background: #fff;
+			cursor: pointer;
+			position: absolute;
+		}
+
+		.sound_progress_content_bar {
+			width: 100%;
+			height: 0%;
+			background: #4693EC;
+			display: inline-block;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+		}
+
+		.sound_progress_content_control {
+			width: 12px;
+			height: 12px;
+			position: absolute;
+			border-radius: 100%;
+			left: -5.5px;
+			bottom: 0px;
+			background: #fff;
+			cursor: pointer;
+		}
+
+		.sound_progress_content_control:hover {
+			box-shadow: 0px 0px 12px 1px rgba(255, 255, 255, 0.7);
+		}
+	</style>
+</head>
+
+<body>
+	<div id="div_father" class="div_father">
+		<div id="div_back_video" class="div_back_video"></div>
+		<div id="div_child_1" class="div_child_1">
+			<div id="div_name" class="div_name">剧目</div>
+			<div id="div_type" class="div_type">HD</div>
+		</div>
+		<div id="start_button" class="start_button">
+			<div class="start_button_div">
+				<div class="start_button_div_1"></div>
+			</div>
+		</div>
+		<div id="div_child_2" class="div_child_2">
+			<!--播放暂停按钮-->
+			<div id="div_child_2_play" class="play">
+				<i class="fa fa-play div_child_2_play_fa"></i>
+			</div>
+			<!--当前播放时间-->
+			<div id="div_child_2_time_current" class="time_current">
+				12:00:00
+			</div>
+			<!--进度条-->
+			<div id="div_child_2_progress" class="progress">
+				<span id="div_child_2_bar" class="bar">
+				</span>
+				<div id="div_child_2_control" class="control">
+				</div>
+			</div>
+			<!--总时间-->
+			<div id="div_child_2_time_total" class="time_total">
+				12:00:00
+			</div>
+			<!--sound-->
+			<div id="div_child_2_sound" class="sound">
+				<i class="fa fa-volume-up div_child_2_sound_fa"></i>
+			</div>
+			<!--download-->
+			<div id="div_child_2_download" class="download">
+				<i class="fa fa-download div_child_2_download_fa"></i>
+			</div>
+			<!--export-->
+			<div id="div_child_2_export" class="export">
+				<i class="fa fa-share div_child_2_export_fa"></i>
+			</div>
+		</div>
+		<!--sound_progress-->
+		<div id="sound_progress" class="sound_progress">
+			<!--进度条-->
+			<div id="sound_progress_content" class="sound_progress_content">
+				<span id="sound_progress_content_bar" class="sound_progress_content_bar">
+				</span>
+				<div id="sound_progress_content_control" class="sound_progress_content_control">
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+	var time1
+	$("#div_father").hover(function () {
+		window.clearInterval(time1)
+		$("#div_child_1").stop().animate({ "opacity": "0.8" }, 500, function () {
+
+		});
+		$("#div_child_2").stop().animate({ "opacity": "0.8" }, 500, function () {
+
+		});
+	}, function () {
+		$("#div_child_1").stop().animate({ "opacity": "0" }, 500, function () {
+
+		});
+		time1 = setTimeout("fade()", 1500);
+
+	}
+	);
+	function fade() {
+		$("#div_child_2").stop().animate({ "opacity": "0" }, 500, function () {
+
+		});
+		$("#sound_progress").hide();
+	}
+	$("body").on("click", "#start_button", function (e) { $("#start_button").hide(); });
+	$("body").on("click", "#div_back_video", function (e) {
+		$("#start_button").toggle();
+
+	});
+	$("body").on("click", "#div_child_2_sound", function (e) {
+		$("#sound_progress").toggle();
+	});
+	//视频进度条拖拽
+	$("#div_child_2_control").on("mousedown", function (e) {
+		document.onmousemove = function (e) {
+			var leftv = e.clientX - $("#div_child_2_progress").offset().left;
+			if (leftv <= 0) {
+				leftv = 0;
+			}
+			if (leftv >= $("#div_child_2_progress").get(0).offsetWidth - $("#div_child_2_control").get(0).offsetWidth) {
+				leftv = $("#div_child_2_progress").get(0).offsetWidth - $("#div_child_2_control").get(0).offsetWidth;
+			}
+			$("#div_child_2_control").css({ left: leftv + "px" });
+			$("#div_child_2_bar").css({ width: leftv + "px" });
+		}
+		document.onmouseup = function () {
+			document.onmousemove = null;
+			document.onmousedown = null;
+		}
+	});
+	$("#div_child_2_progress").on("click", function (e) {
+		var leftv = e.clientX - $("#div_child_2_progress").offset().left;
+		if (leftv <= 0) {
+			leftv = 0;
+		}
+		if (leftv >= $("#div_child_2_progress").get(0).offsetWidth - $("#div_child_2_control").get(0).offsetWidth) {
+			leftv = $("#div_child_2_progress").get(0).offsetWidth - $("#div_child_2_control").get(0).offsetWidth;
+		}
+		$("#div_child_2_control").css({ left: leftv + "px" });
+		$("#div_child_2_bar").css({ width: leftv + "px" });
+	});
+	//声音进度条拖拽
+	$("#sound_progress_content_control").on("mousedown", function (e) {
+		document.onmousemove = function (e) {
+			var topv = $("#sound_progress_content").get(0).offsetHeight - (e.clientY - $("#sound_progress_content").offset().top);
+			if (topv <= 0) {
+				topv = 0;
+			}
+			if (topv >= $("#sound_progress_content").get(0).offsetHeight - $("#sound_progress_content_control").get(0).offsetHeight) {
+				topv = $("#sound_progress_content").get(0).offsetHeight - $("#sound_progress_content_control").get(0).offsetHeight;
+			}
+			$("#sound_progress_content_control").css({ bottom: topv + "px" });
+			$("#sound_progress_content_bar").css({ height: topv + "px" });
+			soundPercent();
+		}
+		document.onmouseup = function () {
+			document.onmousemove = null;
+			document.onmousedown = null;
+		}
+	});
+	$("#sound_progress_content").on("click", function (e) {
+		var topv = $("#sound_progress_content").get(0).offsetHeight - (e.clientY - $("#sound_progress_content").offset().top);
+		if (topv <= 0) {
+			topv = 0;
+		}
+		if (topv >= $("#sound_progress_content").get(0).offsetHeight - $("#sound_progress_content_control").get(0).offsetHeight) {
+			topv = $("#sound_progress_content").get(0).offsetHeight - $("#sound_progress_content_control").get(0).offsetHeight;
+		}
+		$("#sound_progress_content_control").css({ bottom: topv + "px" });
+		$("#sound_progress_content_bar").css({ height: topv + "px" });
+		soundPercent();
+	});
+	function soundPercent() {
+		var percent = ($("#sound_progress_content_bar").get(0).offsetHeight) / ($("#sound_progress_content").get(0).offsetHeight - $("#sound_progress_content_control").get(0).offsetHeight);
+		if (percent > 0 && percent < 0.5) {
+			$(".div_child_2_sound_fa").removeClass("fa-volume-up");
+			$(".div_child_2_sound_fa").removeClass("fa-volume-off");
+			$(".div_child_2_sound_fa").addClass("fa-volume-down");
+		} else if (percent >= 0.5) {
+			$(".div_child_2_sound_fa").removeClass("fa-volume-down");
+			$(".div_child_2_sound_fa").removeClass("fa-volume-off");
+			$(".div_child_2_sound_fa").addClass("fa-volume-up");
+		} else if (percent == 0) {
+			$(".div_child_2_sound_fa").removeClass("fa-volume-up");
+			$(".div_child_2_sound_fa").removeClass("fa-volume-down");
+			$(".div_child_2_sound_fa").addClass("fa-volume-off");
+		}
+	}
+	$("#div_child_2_play").on("click", function (e) {
+		if ($("#div_child_2_play .div_child_2_play_fa").hasClass("fa-play")) {
+			$("#div_child_2_play .div_child_2_play_fa").removeClass("fa-play");
+			$("#div_child_2_play .div_child_2_play_fa").addClass("fa-pause");
+		} else {
+			$("#div_child_2_play .div_child_2_play_fa").removeClass("fa-pause");
+			$("#div_child_2_play .div_child_2_play_fa").addClass("fa-play");
+		}
+	});
+</script>
+<script src="jquery.min.js"></script>
+</html>
